@@ -125,8 +125,22 @@ app.controller('searchCtrl', function ($scope, $http) {
 { name: "abstract", slug: "abstract" }
     ];
 
-    $scope.load = function (slug) {
-        $scope.template = 'genres/' + slug + '.html';
-        console.log($scope.template);
+    $scope.load = function (genre) {
+        $scope.template = 'genres/' + genre.slug + '.html';
+        $scope.search_title = genre.name;
     };
+
+
+    $scope.title = 'TOP GENRES';
+    $scope.title_update = function () {
+        //$scope.template = 'genres/' + slug + '.html';
+        if ($scope.search != "") {
+        	$scope.title = 'RESULTS';
+
+        }
+        else {
+        	$scope.title = 'TOP GENRES';
+        }
+    };
+
 });

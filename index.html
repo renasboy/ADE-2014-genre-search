@@ -18,17 +18,27 @@
 
 <script src="angular.min.js"></script>
 <script src="controllers.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<div ng-controller="searchCtrl">
-<form><input type="search" placeholder="Search by genre" ng-model="search"></form>
+</head>
+<body ontouchstart="">
+<div ng-controller="searchCtrl" class="body_layout">
+<i class="ade"></i>
+<h1>#ADE14 <span>genres</span></h1>
+<form><input type="search" placeholder="Search by genre" ng-model="search" ng-change="title_update()"></form>
+
+<h3>{{title}}</h3>
 <ul>
-<li ng-repeat="genre in genres | filter:search | limitTo:10"><a href="javascript:;" ng-click="load(genre.slug)">{{genre.name}}</a></li>
+	<li ng-repeat="genre in genres | filter:search | limitTo:10">
+		<a href="javascript:;" ng-click="load(genre)">{{genre.name}}</a>
+	</li>
 </ul>
 
-<div ng-include="template"></div>
+<h2 id="results_title" ng-show="template" ng-click="template=''">{{search_title}}</h2>
+<div id="results" ng-show="template">
+	<div ng-include="template"></div>
+</div>
 
 </div>
 
