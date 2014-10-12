@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="ADEGenreSearchApp">
+<head>
+<meta charset="utf-8">
+<title>ADE Genre Search</title>
+<script src="angular.min.js"></script>
+<script src="controllers.js"></script>
+<!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+<div ng-controller="searchCtrl">
+<form><input type="search" placeholder="Search by genre" ng-model="search"></form>
+<ul>
+<li ng-repeat="genre in genres | filter:search | limitTo:10"><a href="javascript:;" ng-click="load(genre.slug)">{{genre.name}}</a></li>
+</ul>
+
+<div ng-include="template"></div>
+
+</div>
+
+</body>
+</html>
