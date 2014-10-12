@@ -44,14 +44,14 @@ body * {
     font-weight: 700;    
 }
 h1 {  
-    line-height: 4rem;
+    line-height: 4.6rem;
     text-align: center;
     text-transform: uppercase;
     color: #fff300;
-    font-size: 4rem;
+    font-size: 4.6rem;
 }
 h1 span {
-    font-size: 4rem;
+    font-size: 4.4rem;
     display: block;
     color: #00baff;
 }
@@ -71,20 +71,23 @@ input[type="search"] {
 h3 {
     color: #fff300;
     margin: 10px 0;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 ul {
 
 }
 ul li {
     display: block;
-    margin: 5px 0;
 }
 ul li a {
+    display: block;
     text-transform: uppercase;
     color: #00d2ff;
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: 1.2rem;
+}
+ul li a:active {
+    color: #fff;
 }
 .body_layout {
     display: block;
@@ -144,7 +147,7 @@ ul li a {
     content: 'x';
     top: 20px;
     bottom: 0;
-    right: 50px;
+    right: 30px;
     color: #ff005a;
 }
 
